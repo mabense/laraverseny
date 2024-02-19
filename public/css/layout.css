@@ -1,0 +1,100 @@
+@import "units.css";
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header,
+footer,
+main {
+    height: 100%;
+
+}
+
+main {
+    height: 100%;
+    /* border: 3px dotted red; */
+    contain: content;
+}
+
+header,
+footer,
+q {
+    width: 100%;
+}
+
+header,
+footer {
+    height: fit-content;
+}
+
+header,
+aside,
+footer {
+    z-index: 100;
+}
+
+.column {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.centered {
+    /* width: 100%;
+    height: 100%; */
+    justify-content: space-around;
+    text-align: center;
+}
+
+.quote-author {
+    margin-left: 62%;
+    max-width: fit-content;
+}
+
+aside {
+    width: 75vw;
+    max-width: var(--nav-width);
+    visibility: hidden;
+}
+
+section {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden scroll;
+    /* max-width: 100%; */
+    /* min-width: 0; */
+}
+
+a {
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header.nav>a {
+    max-width: var(--nav-width);
+}
+
+/* aside.nav>a {
+    height: var(--nav-height);
+    padding-top: .5em;
+    padding-bottom: .5em;
+} */

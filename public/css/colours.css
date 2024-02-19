@@ -1,0 +1,14 @@
+:root {
+    --bg: Lavender;
+    --text: black;
+    --bg-accent: black;
+    --text-accent: wheat;
+}
+
+header,
+aside,
+footer {
+    background-color: black;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: wheat;
+}
