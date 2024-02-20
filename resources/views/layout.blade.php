@@ -2,8 +2,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="hu" xml:lang="hu">
 
+@php
+    define("PRE_TITLE", "Laraverseny - ");
+@endphp
+
 <head>
-    <title>Laraverseny - {{ $title }}</title>
+    <title> {{ PRE_TITLE }} @yield('title') </title>
     <meta charset="utf8" />
     <link rel="stylesheet" href="{{ asset('/css/colours.css') }}" />
     <link rel="stylesheet" href="{{ asset('/css/layout.css') }}" />
@@ -19,7 +23,7 @@
     <main class="row">
         <x-side-nav />
         <section id="page" class="centered column">
-            {{ $slot }}
+            @yield('page')
         </section>
     </main>
     <x-feedback />
@@ -35,37 +39,16 @@
                     // alert(this.href);
 
                     jQuery.ajax({
-                        url: this.href,
+                        url: this.href, // + "/ajax"
                         type: 'GET',
                         success: function(result) {
-                            $("#page").html(result);
+                            $("title").html("Laraverseny - " + result['title']);
+                            $("#page").html(result['page']);
+                            $("footer").html(result['feedback']);
                         }
                     });
 
-                    // fetch('/bye')
-                    //     .then(response => {
-                    //         if (response.ok) {
-                    //             return response.text();
-                    //         }
-                    //         throw new Error('Network response was not ok.');
-                    //     })
-                    //     .then(html => {
-                    //         $('#page').innerHTML = html;
-                    //     })
-                    //     .catch(error => {
-                    //         console.error('There has been a problem with your fetch operation:',
-                    //             error);
-                    //     });
-
-
-
-                    // window.location.href = '/welcome';
-
             });
-
-            // $("#stop").click(function(event) {
-            //     event.stopPropagation();
-            // });
         });
     </script>
 </body>

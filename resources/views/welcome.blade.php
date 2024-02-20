@@ -1,6 +1,9 @@
-<x-layout>
-    <x-slot name="title">Welcome</x-slot>
+@extends('layout')
 
-    Hello there! 
-    
-</x-layout>
+@section('title')
+    Welcome
+@endsection
+
+@section('page')
+    Hello there!
+@endsection

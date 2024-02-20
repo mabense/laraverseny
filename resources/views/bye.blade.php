@@ -1,6 +1,9 @@
-<x-layout>
-    <x-slot name="title">Bye</x-slot>
+@extends('layout')
 
-    Good bye! 
-    
-</x-layout>
+@section('title')
+    Bye
+@endsection
+
+@section('page')
+    Good bye!
+@endsection
