@@ -14,20 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (Request $request) {
+    return ajaxOrLoadRoute($request, 'welcome');
 });
 
 Route::get('/welcome', function (Request $request) {
-    if ($request->ajax()) {
-        return view('welcome')->renderSections();
-    }
-    // return redirect('/');
+    return ajaxOrLoadRoute($request, 'welcome');
 });
 
 Route::get('/bye', function (Request $request) {
-    if ($request->ajax()) {
-        return view('bye')->renderSections();
-    }
-    // return redirect('/');
+    return ajaxOrLoadRoute($request, 'bye');
 });
+
+function ajaxOrLoadRoute(Request $request, string $route) {
+    if ($request->ajax()) {
+        return view($route)->renderSections();
+    }
+    return view($route);
+}
