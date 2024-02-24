@@ -28,6 +28,7 @@ Route::get('/bye', function (Request $request) {
 
 function ajaxOrLoadRoute(Request $request, string $route) {
     if ($request->ajax()) {
+        /** @disregard P1013  */
         return view($route)->renderSections();
     }
     return view($route);
