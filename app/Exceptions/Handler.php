@@ -9,6 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
+use App\Services\NavService;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -28,25 +30,19 @@ class Handler extends ExceptionHandler
     public function register(): void
     {
         $this->reportable(function (Throwable $e) {
-            if ($e instanceof HttpException) {
-                return view('error')
-                ->with('code', $e->getCode())
-                ->with('message', $e->getMessage());
-            }
             //
         });
     }
 
-    protected function renderHttpException(HttpExceptionInterface $e) : Response {
+    protected function renderHttpException(HttpExceptionInterface $e): Response
+    {
         if ($e instanceof HttpException) {
             $code = $e->getStatusCode();
             $texts = Response::$statusTexts;
-            return response(view('error')
-            ->with('code', $code)
-            ->with(
-                'message', 
-                array_key_exists($code, $texts) ? Response::$statusTexts[$code] : $e->getMessage())
-            ->render());
+            $errorView = NavService::error(
+                $code, 
+                array_key_exists($code, $texts) ? $texts[$code] : $e->getMessage());
+            return response($errorView->render());
         }
         return parent::renderHttpException($e);
     }
