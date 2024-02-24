@@ -1,2 +1,4 @@
+<a href="/contests">Versenyek</a>
+<a href="/users">Felhasználók</a>
 <a href="/welcome">Come back</a>
-<a id="stop" href="/bye">Go away</a>
+<a href="/bye">Go away</a>
