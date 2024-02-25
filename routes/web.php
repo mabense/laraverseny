@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\NavController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpFoundation\Response;
+
+use App\Http\Controllers\NavController;
+use App\Http\Controllers\ContestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +18,13 @@ use Symfony\Component\HttpFoundation\Response;
 |
 */
 
-Route::get('/', [NavController::class, 'navigate'])->name('welcome');
+Route::get('/', [NavController::class, 'welcome']);
 
-Route::get('/welcome', [NavController::class, 'navigate'])->name('welcome');
+Route::get('/welcome', [NavController::class, 'welcome']);
 
-Route::get('/bye', [NavController::class, 'navigate'])->name('bye');
+Route::get('/bye', [NavController::class, 'bye']);
+
+Route::get('/contests', [ContestController::class, 'index']);
 
 // Route::get('/{page}', [NavController::class, 'ajax'])->where('page', 'contests|users');
 
