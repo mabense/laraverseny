@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use App\Http\Controllers\NavController;
 use App\Http\Controllers\ContestController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::get('/welcome', [NavController::class, 'welcome']);
 Route::get('/bye', [NavController::class, 'bye']);
 
 Route::get('/contests', [ContestController::class, 'index']);
+
+Route::get('/users', [UserController::class, 'index']);
 
 // Route::get('/{page}', [NavController::class, 'ajax'])->where('page', 'contests|users');
 
