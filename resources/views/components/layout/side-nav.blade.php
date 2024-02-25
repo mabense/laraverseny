@@ -1,3 +1,3 @@
 <aside class="nav column">
-    <x-nav />
+    <x-layout.nav />
 </aside>

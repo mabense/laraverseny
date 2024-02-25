@@ -20,14 +20,14 @@
 </head>
 
 <body>
-    <x-top-nav />
+    <x-layout.top-nav />
     <main class="row">
-        <x-side-nav />
+        <x-layout.side-nav />
         <section id="page" class="centered column">
             @yield('page')
         </section>
     </main>
-    <x-feedback />
+    <x-layout.feedback />
 
 </body>
 
