@@ -13,9 +13,10 @@ $(document).ready(function() {
             url: this.href,
             type: 'GET',
             success: function(result) {
-                $("title").html("Laraverseny - " + result['title']);
-                $("#page").html(result['page']);
-                $("footer").html(result['feedback']);
+                $template = $('#ajax').prop('content');
+                $('title').html( $($template).find('title').text() + result['title']);
+                $('#page').html(result['page']);
+                $('footer').html(result['feedback']);
             }
         };
 
