@@ -5,5 +5,7 @@
 @endsection
 
 @section('page')
-    Versenyek listázása itt.
+    <x-card class="centered stretch-height column nowrap">
+        Versenyek listázása itt.
+    </x-card>
 @endsection

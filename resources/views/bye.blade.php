@@ -5,5 +5,7 @@
 @endsection
 
 @section('page')
-    Good bye!
+    <x-card class="centered stretch-height column nowrap">
+        Good bye!
+    </x-card>
 @endsection

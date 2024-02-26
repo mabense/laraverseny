@@ -7,7 +7,7 @@
 @endsection
 
 @section('page')
-    <centered>
+    <x-card class="centered stretch-height column nowrap">
         {{ $code }} | {{ $message }}
-    </centered>
+    </x-card>
 @endsection

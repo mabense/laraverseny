@@ -1,3 +1,3 @@
-<header class="nav row">
+<header class="row nowrap">
     <x-layout.nav />
 </header>

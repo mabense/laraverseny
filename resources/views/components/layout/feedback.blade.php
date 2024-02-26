@@ -1,8 +1,8 @@
-<footer class="centered column">
+<footer class="centered column nowrap">
     <q>
-        Let all your things have their places; let each part of your business have its time.
+        Simplicity is the ultimate sophistication.
     </q>
     <span class="quote-author">
-        - Benjamin Franklin
+        - Leonardo da Vinci
     </span>
 </footer>

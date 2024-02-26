@@ -1,4 +1,13 @@
 
+function updateSegments(result) {
+    $template = $('#ajax').prop('content');
+    $('title').html( $($template).find('title').text() + result['title']);
+    $('#page').html(result['page']);
+    $('footer').html(result['feedback']);
+
+    $('aside').fadeOut();
+}
+
 $(document).ready(function() {
 
 
@@ -13,10 +22,7 @@ $(document).ready(function() {
             url: this.href,
             type: 'GET',
             success: function(result) {
-                $template = $('#ajax').prop('content');
-                $('title').html( $($template).find('title').text() + result['title']);
-                $('#page').html(result['page']);
-                $('footer').html(result['feedback']);
+                updateSegments(result);
             }
         };
 
@@ -40,9 +46,7 @@ $(window).on('popstate', function(event) {
         url: location.href,
         type: 'GET',
         success: function(result) {
-            $("title").html("Laraverseny - " + result['title']);
-            $("#page").html(result['page']);
-            $("footer").html(result['feedback']);
+            updateSegments(result);
         }
     });
 });
