@@ -29,6 +29,10 @@ Route::get('/contests', [ContestController::class, 'index']);
 
 Route::get('/users', [UserController::class, 'index']);
 
+Route::get('/signup', [UserController::class, 'signup']);
+
+Route::get('/login', [UserController::class, 'login']);
+
 // Route::get('/{page}', [NavController::class, 'ajax'])->where('page', 'contests|users');
 
 Route::get('/{route}', [NavController::class, 'notFound']);

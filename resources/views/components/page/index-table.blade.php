@@ -1,4 +1,4 @@
-@props(['columns', 'data'])
+@props(['data'])
 
 {{-- <table id="index">
     <tr>
@@ -19,9 +19,11 @@
 <section id="index" class="centered column nowrap">
     @foreach ($data as $row)
         <x-card>
-            @foreach ($row as $column => $cell)
-                {{ $columns[$column] }}: {{ $cell }} </br>
-            @endforeach
+            név: {{ $row['surname'] }} {{ $row['givenname'] }} </br>
+            email: {{ $row['email'] }} </br>
+            {{-- @foreach ($row as $column => $cell)
+            {{ $column }}: {{ $cell }} </br>
+            @endforeach --}}
         </x-card>
     @endforeach
 </section>

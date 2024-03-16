@@ -1,14 +1,19 @@
 :root {
-    --bg: Lavender;
+    --bg: #151E3D;
     --text: black;
     --bg-accent: black;
     --text-accent: wheat;
 }
 
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
 header,
 aside,
 footer {
-    background-color: black;
+    background-color: var(--bg-accent);
     /* background-color: rgba(0, 0, 0, 0.5); */
-    color: wheat;
+    color: var(--text-accent);
 }

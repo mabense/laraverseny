@@ -28,7 +28,7 @@
 
     <div class="container stretch-width stretch-height column nowrap">
         <x-layout.top-nav />
-        <main class="stretch-width stretch-height row nowrap debug">
+        <main class="stretch-width stretch-height row nowrap">
             <x-layout.side-nav />
             <section id="page" class="stretch-width stretch-height column nowrap">
                 @yield('page')

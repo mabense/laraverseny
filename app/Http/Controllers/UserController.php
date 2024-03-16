@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use App\Models\User;
+
 use App\Services\NavService;
 
 class UserController extends Controller
@@ -21,12 +23,7 @@ class UserController extends Controller
         return NavService::ajaxOrLoad(
             $request,
             $view
-                ->with("columns", ['Asd', 'Fgh', 'Jkl', 'Éáű'])
-                ->with("data", [
-                    [42, 72, 103, 1000],
-                    [01, 02, 03, 1001],
-                    [543, 436, 56745, 1024]
-                ])
+                ->with("data", User::all())
         );
     }
 
@@ -46,5 +43,17 @@ class UserController extends Controller
     public function store(Request $request)
     {
         return NavService::navigate($request, 'users.store');
+    }
+
+
+    public function signup(Request $request)
+    {
+        return NavService::navigate($request, 'signup');
+    }
+
+
+    public function login(Request $request)
+    {
+        return NavService::navigate($request, 'login');
     }
 }
