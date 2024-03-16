@@ -1,13 +1,25 @@
 @extends('layout')
 
 @section('title')
-    Bejelentkezés
+    Regisztráció
 @endsection
 
 @section('page')
     <x-card class="centered column nowrap">
         @php
             $inputs = [
+                [
+                    'id' => 'surname',
+                    'label' => 'Vezetéknév',
+                    'type' => 'text',
+                    'value' => '',
+                ],
+                [
+                    'id' => 'givenname',
+                    'label' => 'Keresztnév',
+                    'type' => 'text',
+                    'value' => '',
+                ],
                 [
                     'id' => 'email',
                     'label' => 'Email',
@@ -21,10 +33,16 @@
                     'value' => '',
                 ],
                 [
+                    'id' => 'password_confirmation',
+                    'label' => 'Jelszó még egyszer',
+                    'type' => 'password',
+                    'value' => '',
+                ],
+                [
                     'id' => 'ok',
                     'label' => '',
                     'type' => 'submit',
-                    'value' => 'Belépés',
+                    'value' => 'Regisztráció',
                 ],
             ];
         @endphp

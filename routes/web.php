@@ -29,7 +29,9 @@ Route::get('/contests', [ContestController::class, 'index']);
 
 Route::get('/users', [UserController::class, 'index']);
 
-Route::get('/signup', [UserController::class, 'signup']);
+Route::post('/users', [UserController::class, 'store']);
+
+Route::get('/signup', [UserController::class, 'create']);
 
 Route::get('/login', [UserController::class, 'login']);
 

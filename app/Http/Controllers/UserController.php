@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Validator;
 
 use App\Models\User;
 
@@ -42,13 +44,14 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        return NavService::navigate($request, 'users.store');
-    }
-
-
-    public function signup(Request $request)
-    {
-        return NavService::navigate($request, 'signup');
+        $formFields = $request->validate([
+            'surname' => ['required', 'min:3'],
+            'givenname' => ['required', 'min:3'],
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'password' => ['required', 'confirmed', 'min:6']
+        ]);
+        $formFields['password'] = bcrypt($formFields['password']);
+        $user = User::create($formFields);
     }
 
 

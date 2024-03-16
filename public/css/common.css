@@ -44,6 +44,10 @@
     max-height: 100vh;
 }
 
+.error {
+    color: red;
+}
+
 .debug {
     border: 3px dotted red;
 }

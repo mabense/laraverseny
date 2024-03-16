@@ -9,7 +9,7 @@
     --a-text-active: rgba(0, 0, 0, .75);
     --ok-bg: transparent;
     --ok-text: inherit;
-    --ok-bg-hover: rgba(255, 255, 255, .5);
+    --ok-bg-hover: rgba(0, 0, 0, .5);
     --ok-text-hover: white;
     --ok-bg-active: rgba(255, 255, 255, .75);
     --ok-text-active: rgba(0, 0, 0, .75);
