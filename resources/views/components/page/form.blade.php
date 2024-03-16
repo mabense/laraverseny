@@ -16,7 +16,7 @@
             </label>
         @endif
         @error($input['id'])
-            <p class="error" >{{ $message }}</p>
+            <span class="error" >{{ $message }}</span>
         @enderror
         <br />
     @endforeach

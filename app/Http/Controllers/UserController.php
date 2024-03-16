@@ -48,10 +48,12 @@ class UserController extends Controller
             'surname' => ['required', 'min:3'],
             'givenname' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
-            'password' => ['required', 'confirmed', 'min:6']
+            'password' => 'required|confirmed|min:6'
         ]);
         $formFields['password'] = bcrypt($formFields['password']);
         $user = User::create($formFields);
+        auth()->login($user);
+        return self::index($request);
     }
 
 
