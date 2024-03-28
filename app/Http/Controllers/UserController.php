@@ -61,4 +61,17 @@ class UserController extends Controller
     {
         return NavService::navigate($request, 'login');
     }
+
+
+    public function authenticate(Request $request)
+    {
+        $formFields = $request->validate([
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'password' => 'required'
+        ]);
+        $formFields['password'] = bcrypt($formFields['password']);
+        
+        // auth()->login($user);
+        return NavService::navigate($request, 'welcome');
+    }
 }
