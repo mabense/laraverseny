@@ -1,6 +1,6 @@
 @extends('layout')
 
-@props(['columns', 'data'])
+@props(['data'])
 
 @section('title')
     Felhasználók
