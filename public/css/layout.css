@@ -1,0 +1,57 @@
+@import "units.css";
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    min-width: 100vw;
+}
+
+html,
+body,
+header,
+aside,
+main,
+footer {
+    max-width: 100vw;
+}
+
+main {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+header,
+aside,
+footer {
+    z-index: 100;
+}
+
+aside {
+    position: fixed;
+    width: var(--nav-width);
+    /* visibility: hidden; */
+}
+
+.quote-author {
+    margin-left: 62%;
+    width: fit-content;
+}
+
+#index {
+    width: 100%;
+}
+
+.card {
+    /* width: 80%;
+    height: fit-content; */
+    background-color: lavender;
+    margin: 1em 2em;
+    border: 0;
+    border-radius: .2em;
+    box-shadow: .15em .15em olivedrab;
+    padding: 1em;
+}

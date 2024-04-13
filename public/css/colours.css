@@ -1,0 +1,19 @@
+:root {
+    --bg: #151E3D;
+    --text: black;
+    --bg-accent: black;
+    --text-accent: wheat;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+header,
+aside,
+footer {
+    background-color: var(--bg-accent);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: var(--text-accent);
+}
