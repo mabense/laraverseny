@@ -1,3 +1,13 @@
-<div>
-    <!-- It is not the man who has too little, but the man who craves more, that is poor. - Seneca -->
-</div>
+@extends('layout')
+
+@props(['code', 'message'])
+
+@section('title')
+    {{ $message }}
+@endsection
+
+@section('page')
+    <x-card class="centered stretch-height column nowrap">
+        {{ $code }} | {{ $message }}
+    </x-card>
+@endsection
