@@ -5,5 +5,7 @@
 @endsection
 
 @section('page')
-    <p>Üdvözletünk!</p>
+    <x-card class="centered stretch-height column">
+        <p>Üdvözletünk!</p>
+    </x-card>
 @endsection
