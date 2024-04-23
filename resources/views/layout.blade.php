@@ -23,8 +23,15 @@
     <script src="{{ asset('/js/ajax/nav.js') }}" type="text/javascript"></script>
 </head>
 
-<body class="container column">
-    @yield('page')
+<body class="container column nowrap">
+
+    <x-layout.top-nav />
+    <main class="stretch-width stretch-height row nowrap">
+        <x-layout.side-nav />
+        <section id="page" class="stretch-width stretch-height column nowrap">
+            @yield('page')
+        </section>
+    </main>
 </body>
 
 </html>
