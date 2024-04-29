@@ -7,6 +7,9 @@
 @endsection
 
 @section('page')
+    <x-page.detail-box />
+    <x-page.button-bar />
+    <x-page.index>
         @foreach ($data as $row)
             <x-card>
                 név: {{ $row['surname'] }} {{ $row['givenname'] }} </br>
@@ -16,4 +19,5 @@
                 @endforeach --}}
             </x-card>
         @endforeach
+    </x-page.index>
 @endsection
