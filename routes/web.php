@@ -16,6 +16,10 @@ Route::get('/signup', [UserController::class, 'create']);
 
 Route::post('/signup', [UserController::class, 'store']);
 
+Route::post('/login', [UserController::class, 'login']);
+
+Route::get('/logout', [UserController::class, 'logout']);
+
 //
 
 Route::get('/{route}', [NavController::class, 'notFound']);

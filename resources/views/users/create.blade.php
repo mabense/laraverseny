@@ -7,7 +7,7 @@
 @section('page')
     <p>
         @auth
-            Szia, {{ auth()->user()->name }}!
+            Szia, {{ auth()->user()->surname }} {{ auth()->user()->givenname }}!
         @endauth
     </p>
     <form method="post" action="/signup">

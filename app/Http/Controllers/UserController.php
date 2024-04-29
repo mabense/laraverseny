@@ -61,6 +61,26 @@ class UserController extends Controller
         $newUser = User::create($formFields);
         auth()->login($newUser);
 
-        return redirect()->to('/signup');
+        // return redirect()->to('signup');
+
+        return NavService::ajaxOrLoad($request, view('/'));
+    }
+
+
+    public function login(Request $request)
+    {
+        //
+    }
+
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return NavService::ajaxOrLoad($request, view('/'));
     }
 }

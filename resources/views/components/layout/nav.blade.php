@@ -4,7 +4,7 @@
 <a href="/bye">Go away</a>
 @auth
     <span>Üdv, {{ auth()->user()->surname }} {{ auth()->user()->givenname }}!</span>
-    <a href="/login">Kijelentkezés</a>
+    <a href="/logout">Kijelentkezés</a>
 @else
     <a href="/signup">Regisztráció</a>
     <a href="/login">Bejelentkezés</a>
