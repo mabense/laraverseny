@@ -30,7 +30,9 @@ class NavService
     {
         if ($request->ajax()) {
             /** @disregard P1013  */
-            return $view->renderSections();
+            $sections = $view->renderSections();
+            $sections['nav'] = 'Hellooouuu!!!';
+            return $sections;
         }
         return $view;
     }

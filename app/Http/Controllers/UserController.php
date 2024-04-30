@@ -61,9 +61,8 @@ class UserController extends Controller
         $newUser = User::create($formFields);
         auth()->login($newUser);
 
-        // return redirect()->to('signup');
-
-        return NavService::ajaxOrLoad($request, view('/'));
+        // return view('users.create')->renderSections();
+        return NavService::navigate($request, 'users.create');
     }
 
 
@@ -81,6 +80,6 @@ class UserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return NavService::ajaxOrLoad($request, view('/'));
+        return NavService::navigate($request, 'welcome');
     }
 }
